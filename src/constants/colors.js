@@ -3,4 +3,5 @@ export const colors = {
     secondary: 'aquamarine',
     tertiary: '#fff',
     quaternary: '#a44125',
+    quinary: '#346B31',
 }

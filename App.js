@@ -1,6 +1,20 @@
-import Home from './src/screens/Home'
+import { useState } from 'react'
+import { Home, Students } from './src/screens'
+import { useFonts } from 'expo-font'
+import fonts from './src/global/fonts'
+
 
 export default function App() {
-  return <Home />
+  const [fontsLoaded] = useFonts(fonts)
+  const [cursoSelected, setCursoSelected] = useState('')
+
+  if(!fontsLoaded) {
+    return null
+  }
+  
+  return cursoSelected ? (
+  <Students curso={cursoSelected} /> )
+  : (<Home setCursoSelected={setCursoSelected}/>
+  )
 }
 
